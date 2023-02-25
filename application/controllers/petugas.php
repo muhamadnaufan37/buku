@@ -1,28 +1,29 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class admin extends CI_Controller {
+class petugas extends CI_Controller
+{
 
     public function __construct()
     {
         parent::__construct();
         $this->load->library('form_validation');
         if ($this->session->userdata('role_id') != '2') {
-            $this->session->set_flashdata('message', 'swal("Ops!", "Anda harus login sebagai Admin", "warning");');
+            $this->session->set_flashdata('message', 'swal("Ops!", "Anda harus login sebagai petugas", "warning");');
             redirect('landing');
         }
     }
 
-	public function index()
-	{
-		$data['page_title'] = 'Dashboard';
+    public function index()
+    {
+        $data['page_title'] = 'Dashboard';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('template1/meta', $data);
-		$this->load->view('template1/navbar', $data);
-		$this->load->view('template1/sidebar', $data);
-		$this->load->view('superadmin/index');
-		$this->load->view('template1/js');
-	}
+        $this->load->view('template1/navbar', $data);
+        $this->load->view('template1/sidebar', $data);
+        $this->load->view('superadmin/index');
+        $this->load->view('template1/js');
+    }
 
     public function buku()
     {
@@ -35,10 +36,10 @@ class admin extends CI_Controller {
         $data['title'] = 'DISDUKCAPIL';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('template1/meta', $data);
-		$this->load->view('template1/navbar');
-		$this->load->view('template1/sidebar', $data);
+        $this->load->view('template1/navbar');
+        $this->load->view('template1/sidebar', $data);
         $this->load->view('buku/index', $data);
-		$this->load->view('template1/js');
+        $this->load->view('template1/js');
     }
 
     public function add_buku()
@@ -82,10 +83,10 @@ class admin extends CI_Controller {
         $data['title'] = 'DISDUKCAPIL';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('template1/meta', $data);
-		$this->load->view('template1/navbar');
-		$this->load->view('template1/sidebar', $data);
+        $this->load->view('template1/navbar');
+        $this->load->view('template1/sidebar', $data);
         $this->load->view('buku/edit', $data);
-		$this->load->view('template1/js');
+        $this->load->view('template1/js');
     }
 
     public function update_buku()

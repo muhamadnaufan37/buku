@@ -2,21 +2,21 @@
 
     <div class="header-left">
         <?php if ($user['role_id'] == '1') { ?>
-        <a href="<?php echo base_url('superadmin') ?>" class="logo">
-        <?php } ?>
-        <?php if ($user['role_id'] == '2') { ?>
-        <a href="<?php echo base_url('admin') ?>" class="logo">
-        <?php } ?>
-            <img src="<?php echo base_url('assets/template1') ?>/img/Purwakarta.png" alt="Logo">
-        </a>
-        <?php if ($user['role_id'] == '1') { ?>
-        <a href="<?php echo base_url('superadmin') ?>" class="logo logo-small">
-        <?php } ?>
-        <?php if ($user['role_id'] == '2') { ?>
-        <a href="<?php echo base_url('admin') ?>" class="logo logo-small">
-        <?php } ?>
-            <img src="<?php echo base_url('assets/template1') ?>/img/Purwakarta.png" alt="Logo" width="30" height="30">
-        </a>
+            <a href="<?php echo base_url('superadmin') ?>" class="logo">
+            <?php } ?>
+            <?php if ($user['role_id'] == '2') { ?>
+                <a href="<?php echo base_url('petugas') ?>" class="logo">
+                <?php } ?>
+                <img src="<?php echo base_url('assets/template1') ?>/img/Purwakarta.png" alt="Logo">
+                </a>
+                <?php if ($user['role_id'] == '1') { ?>
+                    <a href="<?php echo base_url('superadmin') ?>" class="logo logo-small">
+                    <?php } ?>
+                    <?php if ($user['role_id'] == '2') { ?>
+                        <a href="<?php echo base_url('petugas') ?>" class="logo logo-small">
+                        <?php } ?>
+                        <img src="<?php echo base_url('assets/template1') ?>/img/Purwakarta.png" alt="Logo" width="30" height="30">
+                        </a>
     </div>
     <div class="menu-toggle">
         <a href="javascript:void(0);" id="toggle_btn">
@@ -48,7 +48,6 @@
                     <img class="rounded-circle" src="<?php echo base_url('assets/template/dist/img/') . $user['image']; ?>" width="31" alt="user">
                     <div class="user-text">
                         <h6><?= $user['nama']; ?></h6>
-                        <p class="text-muted mb-0"><?= ($user['role_id'] == "1") ? 'Superadmin' : '<a class="text-muted">Tidak ada title</a>'; ?></p>
                     </div>
                 </span>
             </a>

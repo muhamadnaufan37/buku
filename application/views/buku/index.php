@@ -10,7 +10,7 @@
                             <li class="breadcrumb-item"><a href="<?php echo base_url('superadmin') ?>">Home</a></li>
                         <?php } ?>
                         <?php if ($user['role_id'] == '2') { ?>
-                            <li class="breadcrumb-item"><a href="<?php echo base_url('admin') ?>">Home</a></li>
+                            <li class="breadcrumb-item"><a href="<?php echo base_url('petugas') ?>">Home</a></li>
                         <?php } ?>
                         <li class="breadcrumb-item active"><?php echo $page_title ?></li>
                     </ul>
@@ -29,7 +29,12 @@
                                     <h3 class="page-title"><?php echo $page_title ?></h3>
                                 </div>
                                 <div class="col-auto text-end float-end ms-auto download-grp">
-                                    <a href="<?php echo base_url('superadmin/add_buku') ?>" class="btn btn-outline-primary me-2"><i class="fas fa-book"></i> Tambah Buku</a>
+                                    <?php if ($user['role_id'] == '1') { ?>
+                                        <a href="<?php echo base_url('superadmin/add_buku') ?>" class="btn btn-outline-primary me-2"><i class="fas fa-book"></i> Tambah Buku</a>
+                                    <?php } ?>
+                                    <?php if ($user['role_id'] == '2') { ?>
+                                        <a href="<?php echo base_url('petugas/add_buku') ?>" class="btn btn-outline-primary me-2"><i class="fas fa-book"></i> Tambah Buku</a>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>

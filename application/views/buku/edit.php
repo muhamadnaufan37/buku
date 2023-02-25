@@ -10,7 +10,7 @@
                             <li class="breadcrumb-item"><a href="<?php echo base_url('superadmin') ?>">Home</a></li>
                         <?php } ?>
                         <?php if ($user['role_id'] == '2') { ?>
-                            <li class="breadcrumb-item"><a href="<?php echo base_url('admin') ?>">Home</a></li>
+                            <li class="breadcrumb-item"><a href="<?php echo base_url('petugas') ?>">Home</a></li>
                         <?php } ?>
                         <li class="breadcrumb-item active"><?php echo $page_title ?></li>
                     </ul>

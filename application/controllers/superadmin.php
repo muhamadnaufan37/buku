@@ -40,7 +40,7 @@ class superadmin extends CI_Controller {
             'alluser' => $this->M_data->alluser(),
         );
 
-        $data['page_title'] = 'Panel Akun Admin&petugas';
+        $data['page_title'] = 'Panel Akun';
         $data['title'] = 'DISDUKCAPIL';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('template1/meta', $data);
